@@ -51,10 +51,10 @@
       // | SHIFT |  Z  |  X  |  C   |  V   |  B   |  MUTE  |  | PLAY  |  N   |  M    |  ,    |  .   |   /   | SHIFT |
       //               | GUI | ALT  | CTRL | LOWER|  ENTER |  | SPACE | RAISE| CTRL  | ALT   | GUI  |
       bindings = <
-        &kp GRAVE &AS(IT_N1) &AS(IT_N2)   &AS(IT_N3)   &AS(IT_N4)    &AS(IT_N5)                         &AS(IT_N6) &AS(IT_N7)    &AS(IT_N8)    &AS(IT_N9)   &AS(IT_N0)   &AS(IT_SQT)
-        &kp TAB   &AS(Q)  &AS(W)    &AS(E)    &AS(R)     &AS(T)                            &AS(Y)  &AS(U)     &AS(I)     &AS(O)    &AS(P)    &kp BSPC
-        &kp LSHFT   &AS(A)  &AS(S)    &AS(D)    &AS(F)     &AS(G)                            &AS(H)  &AS(J)     &AS(K)     &AS(L)    &AS(SEMI) &kp SQT
-        &kp LCTRL &AS(Z)  &AS(X)    &AS(C)    &AS(V)     &AS(B)   &kp C_MUTE &kp C_PLAY    &AS(N)  &AS(M)     &AS(COMMA) &AS(DOT)  &AS(FSLH) &kp RSHFT
+        &kp GRAVE AS(IT_N1) AS(IT_N2)   AS(IT_N3)   AS(IT_N4)    AS(IT_N5)                         AS(IT_N6) AS(IT_N7)    AS(IT_N8)    AS(IT_N9)   AS(IT_N0)   AS(IT_SQT)
+        &kp TAB   AS(Q)  AS(W)    AS(E)    AS(R)     AS(T)                            AS(Y)  AS(U)     AS(I)     AS(O)    AS(P)    &kp BSPC
+        &kp LSHFT   AS(A)  AS(S)    AS(D)    AS(F)     AS(G)                            AS(H)  AS(J)     AS(K)     AS(L)    AS(SEMI) &kp SQT
+        &kp LCTRL AS(Z)  AS(X)    AS(C)    AS(V)     AS(B)   &kp C_MUTE &kp C_PLAY    AS(N)  AS(M)     AS(COMMA) AS(DOT)  AS(FSLH) &kp RSHFT
             &kp LGUI &kp LALT &kp LCTRL &mo LOWER  &kp RET                           &kp SPACE  &mo RAISE  &kp RCTRL &kp RALT  &kp RGUI
       >;
 
