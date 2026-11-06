@@ -15,6 +15,7 @@
 #define LOWER 1
 #define RAISE 2
 #define ADJUST 3
+#define AS(keycode) &as LS(keycode) keycode
 
 / {
 
@@ -39,10 +40,10 @@
       // | SHIFT |  Z  |  X  |  C   |  V   |  B   |  MUTE  |  | PLAY  |  N   |  M    |  ,    |  .   |   /   | SHIFT |
       //               | GUI | ALT  | CTRL | LOWER|  ENTER |  | SPACE | RAISE| CTRL  | ALT   | GUI  |
       bindings = <
-        &kp GRAVE &mt LSHIFT IT_N1 &mt LSHIFT IT_N2   &mt LSHIFT IT_N3   &mt LSHIFT IT_N4    &mt LSHIFT IT_N5                         &mt LSHIFT IT_N6 &mt LSHIFT IT_N7    &mt LSHIFT IT_N8    &mt LSHIFT IT_N9   &mt LSHIFT IT_N0   &mt LSHIFT IT_SQT
-        &kp TAB   &mt LSHIFT Q  &mt LSHIFT W    &mt LSHIFT E    &mt LSHIFT R     &mt LSHIFT T                            &mt LSHIFT Y  &mt LSHIFT U     &mt LSHIFT I     &mt LSHIFT O    &mt LSHIFT P    &kp BSPC
-        &kp LSHFT   &mt LSHIFT A  &mt LSHIFT S    &mt LSHIFT D    &mt LSHIFT F     &mt LSHIFT G                            &mt LSHIFT H  &mt LSHIFT J     &mt LSHIFT K     &mt LSHIFT L    &mt LSHIFT SEMI &kp SQT
-        &kp LCTRL &mt LSHIFT Z  &mt LSHIFT X    &mt LSHIFT C    &mt LSHIFT V     &mt LSHIFT B   &mt LSHIFT C_MUTE &mt LSHIFT C_PLAY    &mt LSHIFT N  &mt LSHIFT M     &mt LSHIFT COMMA &mt LSHIFT DOT  &mt LSHIFT FSLH &kp RSHFT
+        &kp GRAVE &(IT_N1) &AS(IT_N2)   &AS(IT_N3)   &AS(IT_N4)    &AS(IT_N5)                         &AS(IT_N6) &AS(IT_N7)    &AS(IT_N8)    &AS(IT_N9)   &AS(IT_N0)   &AS(IT_SQT)
+        &kp TAB   &AS(Q)  &AS(W)    &AS(E)    &AS(R)     &AS(T)                            &AS(Y)  &AS(U)     &AS(I)     &AS(O)    &AS(P)    &kp BSPC
+        &kp LSHFT   &AS(A)  &AS(S)    &AS(D)    &AS(F)     &AS(G)                            &AS(H)  &AS(J)     &AS(K)     &AS(L)    &AS(SEMI) &kp SQT
+        &kp LCTRL &AS(Z)  &AS(X)    &AS(C)    &AS(V)     &AS(B)   &AS(C_MUTE) &AS(C_PLAY)    &AS(N)  &AS(M)     &AS(COMMA) &AS(DOT)  &AS(FSLH) &kp RSHFT
             &kp LGUI &kp LALT &kp LCTRL &mo LOWER  &kp RET                           &kp SPACE  &mo RAISE  &kp RCTRL &kp RALT  &kp RGUI
       >;
 
