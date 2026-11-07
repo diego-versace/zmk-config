@@ -52,7 +52,7 @@
         &kp TAB   AS(IT_Q)  AS(IT_W)    AS(IT_E)    AS(IT_R)     AS(IT_T)                            AS(IT_Y)  AS(IT_U)     AS(IT_I)     AS(IT_O)    AS(IT_P)    &kp BSPC
         &sh_lk AS(IT_A)  AS(IT_S)    AS(IT_D)    AS(IT_F)     AS(IT_G)                            AS(IT_H)  AS(IT_J)     AS(IT_K)     AS(IT_L)    AS(IT_O_GRAVE) AS(IT_A_GRAVE)
         &kp LCTRL AS(IT_Z)  AS(IT_X)    AS(IT_C)    AS(IT_V)     AS(IT_B)   &kp C_MUTE &kp C_PLAY    AS(IT_N)  AS(IT_M)     AS(IT_COMMA) AS(IT_DOT)  AS(MINUS) &kp ESC
-            &mo TOOLS &mo FN &kp LALT &kp LGUI  &kp SPACE                                                           &kp RET  &mo SYMBOLS  &kp RALT &mo FN  &mo TOOLS
+            &tog TOOLS &mo FN &kp LALT &kp LGUI  &kp SPACE                                                           &kp RET  &mo SYMBOLS  &kp RALT &mo FN  &tog TOOLS
       >;
 
       sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp C_PREV C_NEXT>;
@@ -74,7 +74,6 @@
         &trans    &trans      &trans    &trans     &trans &trans  &trans    &trans   &trans    &trans
       >;
 
-      sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp C_PREV C_NEXT>;
     };
 
     fn_layer {
@@ -93,7 +92,6 @@
         &trans       &trans       &trans       &trans        &trans  &trans  &trans    &trans    &trans   &trans
       >;
 
-      sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp C_PREV C_NEXT>;
     };
 
     tools_layer {
@@ -106,11 +104,13 @@
       display-name = "tools";
       bindings = <
         &bt BT_CLR        &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3    &bt BT_SEL 4                            &none &none &none &none &none &none
-        &ext_power EP_TOG &rgb_ug RGB_HUD &rgb_ug RGB_HUI &rgb_ug RGB_SAD &rgb_ug RGB_SAI &rgb_ug RGB_EFF                         &none &none &none &none &none &none
-        &none             &rgb_ug RGB_BRD &rgb_ug RGB_BRI &none           &none           &none                                   &none &none &none &none &none &none
-        &none             &none           &none           &none           &none           &none            &rgb_ug RGB_TOG &none  &none &none &none &none &none &none
+        &ext_power EP_TOG &none &none &rgb_ug RGB_SAD &rgb_ug RGB_SAI &none                         &none &none &none &none &none &none
+        &none             &none &none &none           &none           &none                                   &none &none &none &none &none &none
+        &none             &none           &none           &none           &none           &none            &none &none  &none &none &none &none &none &none
         &none           &none           &none           &none            &none           &none  &none &none &none &none
       >;
+
+      sensor-bindings = <&inc_dec_kp RGB_BRD RGB_BRI &inc_dec_kp RGB_HUD RGB_HUI>;
     };
   };
 };
