@@ -19,15 +19,6 @@
 
 / {
 
-  // Activate ADJUST layer by pressing raise and lower
-  conditional_layers {
-    compatible = "zmk,conditional-layers";
-    tools_layer {
-      if-layers = <SYMBOLS FN>;
-      then-layer = <TOOLS>;
-    };
-  };
-
       behaviors {
         as: auto_shift {
             compatible = "zmk,behavior-hold-tap";
@@ -37,6 +28,12 @@
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
         };
+        sh_lk: shift_lock {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp LSHFT> <&kp CAPS>;
+        }
     };
 
   keymap {
@@ -53,9 +50,9 @@
       bindings = <
         &kp ESC   AS(IT_N1) AS(IT_N2)   AS(IT_N3)   AS(IT_N4)    AS(IT_N5)                           AS(IT_N6) AS(IT_N7)    AS(IT_N8)    AS(IT_N9)   AS(IT_N0)   AS(IT_SQT)
         &kp TAB   AS(IT_Q)  AS(IT_W)    AS(IT_E)    AS(IT_R)     AS(IT_T)                            AS(IT_Y)  AS(IT_U)     AS(IT_I)     AS(IT_O)    AS(IT_P)    &kp BSPC
-        &kp LSHFT AS(IT_A)  AS(IT_S)    AS(IT_D)    AS(IT_F)     AS(IT_G)                            AS(IT_H)  AS(IT_J)     AS(IT_K)     AS(IT_L)    AS(IT_O_GRAVE) AS(IT_A_GRAVE)
-        &kp LCTRL AS(IT_Z)  AS(IT_X)    AS(IT_C)    AS(IT_V)     AS(IT_B)   &kp C_MUTE &kp C_PLAY    AS(IT_N)  AS(IT_M)     AS(IT_COMMA) AS(IT_DOT)  AS(IT_UNDER) &kp ESC
-            &mo TOOLS &mo FN &kp LALT &kp LGUI  &kp RET                                                           &kp SPACE  &mo SYMBOLS  &kp RALT &mo FN  &kp ESC
+        &sh_lk AS(IT_A)  AS(IT_S)    AS(IT_D)    AS(IT_F)     AS(IT_G)                            AS(IT_H)  AS(IT_J)     AS(IT_K)     AS(IT_L)    AS(IT_O_GRAVE) AS(IT_A_GRAVE)
+        &kp LCTRL AS(IT_Z)  AS(IT_X)    AS(IT_C)    AS(IT_V)     AS(IT_B)   &kp C_MUTE &kp C_PLAY    AS(IT_N)  AS(IT_M)     AS(IT_COMMA) AS(IT_DOT)  AS(MINUS) &kp ESC
+            &mo TOOLS &mo FN &kp LALT &kp LGUI  &kp SPACE                                                           &kp RET  &mo SYMBOLS  &kp RALT &mo FN  &mo TOOLS
       >;
 
       sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp C_PREV C_NEXT>;
