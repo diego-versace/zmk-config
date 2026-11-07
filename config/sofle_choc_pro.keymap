@@ -34,6 +34,16 @@
             tapping-term-ms = <200>;
             bindings = <&kp LSHFT>, <&kp CAPS>;
         };
+	rgb_encoder_left: rgb_encoder_left {
+            compatible = "zmk,behavior-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            bindings = <&rgb_ug RGB_BRD>, <&rgb_ug RGB_BRI>;
+        };
+	rgb_encoder_right: rgb_encoder_right {
+            compatible = "zmk,behavior-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            bindings = <&rgb_ug RGB_HUD>, <&rgb_ug RGB_HUI>;
+        };
     };
 
   keymap {
@@ -110,7 +120,7 @@
         &none           &none           &none           &none            &none           &none  &none &none &none &none
       >;
 
-      sensor-bindings = <&inc_dec_kp RGB_BRD RGB_BRI &inc_dec_kp RGB_HUD RGB_HUI>;
+      sensor-bindings = <&rgb_encoder_left &rgb_encoder_right>;
     };
   };
 };
