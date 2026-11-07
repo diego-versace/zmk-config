@@ -34,15 +34,10 @@
             tapping-term-ms = <200>;
             bindings = <&kp LSHFT>, <&kp CAPS>;
         };
-	rgb_encoder_left: rgb_encoder_left {
-            compatible = "zmk,behavior-sensor-rotate";
-            #sensor-binding-cells = <0>;
-            bindings = <&rgb_ug RGB_BRD>, <&rgb_ug RGB_BRI>;
-        };
-	rgb_encoder_right: rgb_encoder_right {
-            compatible = "zmk,behavior-sensor-rotate";
-            #sensor-binding-cells = <0>;
-            bindings = <&rgb_ug RGB_HUD>, <&rgb_ug RGB_HUI>;
+	rgb_encoder: rgb_encoder{
+            compatible = "zmk,behavior-sensor-rotate-var";
+            #sensor-binding-cells = <2>;
+            bindings = <&rgb_ug>, <&rgb_ug>;
         };
     };
 
@@ -120,7 +115,7 @@
         &none           &none           &none           &none            &none           &none  &none &none &none &none
       >;
 
-      sensor-bindings = <&rgb_encoder_left &rgb_encoder_right>;
+      sensor-bindings = <&rgb_encoder RGB_BRD RGB_BRI &rgb_encoder RGB_HUD RGB_HUI>;
     };
   };
 };
