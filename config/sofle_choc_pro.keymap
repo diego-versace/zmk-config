@@ -22,7 +22,7 @@
   // Activate ADJUST layer by pressing raise and lower
   conditional_layers {
     compatible = "zmk,conditional-layers";
-    adjust_layer {
+    tools_layer {
       if-layers = <SYMBOLS FN>;
       then-layer = <TOOLS>;
     };
@@ -51,11 +51,11 @@
       // | SHIFT |  Z  |  X  |  C   |  V   |  B   |  MUTE  |  | PLAY  |  N   |  M    |  ,    |  .   |   /   | SHIFT |
       //               | GUI | ALT  | CTRL | LOWER|  ENTER |  | SPACE | RAISE| CTRL  | ALT   | GUI  |
       bindings = <
-        &kp GRAVE AS(IT_N1) AS(IT_N2)   AS(IT_N3)   AS(IT_N4)    AS(IT_N5)                         AS(IT_N6) AS(IT_N7)    AS(IT_N8)    AS(IT_N9)   AS(IT_N0)   AS(IT_SQT)
-        &kp TAB   AS(Q)  AS(W)    AS(E)    AS(R)     AS(T)                            AS(Y)  AS(U)     AS(I)     AS(O)    AS(P)    &kp BSPC
-        &kp LSHFT   AS(A)  AS(S)    AS(D)    AS(F)     AS(G)                            AS(H)  AS(J)     AS(K)     AS(L)    AS(SEMI) &kp SQT
-        &kp LCTRL AS(Z)  AS(X)    AS(C)    AS(V)     AS(B)   &kp C_MUTE &kp C_PLAY    AS(N)  AS(M)     AS(COMMA) AS(DOT)  AS(FSLH) &kp RSHFT
-            &kp LGUI &kp LALT &kp LALT &kp LGUI  &kp RET                           &kp SPACE  &mo RAISE  &kp RCTRL &kp RALT  &kp RGUI
+        &kp ESC   AS(IT_N1) AS(IT_N2)   AS(IT_N3)   AS(IT_N4)    AS(IT_N5)                           AS(IT_N6) AS(IT_N7)    AS(IT_N8)    AS(IT_N9)   AS(IT_N0)   AS(IT_SQT)
+        &kp TAB   AS(IT_Q)  AS(IT_W)    AS(IT_E)    AS(IT_R)     AS(IT_T)                            AS(IT_Y)  AS(IT_U)     AS(IT_I)     AS(IT_O)    AS(IT_P)    &kp BSPC
+        &kp LSHFT AS(IT_A)  AS(IT_S)    AS(IT_D)    AS(IT_F)     AS(IT_G)                            AS(IT_H)  AS(IT_J)     AS(IT_K)     AS(IT_L)    AS(IT_SEMI) &kp SQT
+        &kp LCTRL AS(IT_Z)  AS(IT_X)    AS(IT_C)    AS(IT_V)     AS(IT_B)   &kp C_MUTE &kp C_PLAY    AS(IT_N)  AS(IT_M)     AS(IT_COMMA) AS(IT_DOT)  AS(IT_FSLH) &kp RSHFT
+            &mo TOOLS &mo FN &kp LALT &kp LGUI  &kp RET                                                           &kp SPACE  &mo RAISE  &kp RALT &mo FN  &kp ESC
       >;
 
       sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp C_PREV C_NEXT>;
