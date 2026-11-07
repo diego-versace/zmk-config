@@ -55,7 +55,7 @@
         &kp TAB   AS(IT_Q)  AS(IT_W)    AS(IT_E)    AS(IT_R)     AS(IT_T)                            AS(IT_Y)  AS(IT_U)     AS(IT_I)     AS(IT_O)    AS(IT_P)    &kp BSPC
         &kp LSHFT AS(IT_A)  AS(IT_S)    AS(IT_D)    AS(IT_F)     AS(IT_G)                            AS(IT_H)  AS(IT_J)     AS(IT_K)     AS(IT_L)    AS(IT_SEMI) &kp SQT
         &kp LCTRL AS(IT_Z)  AS(IT_X)    AS(IT_C)    AS(IT_V)     AS(IT_B)   &kp C_MUTE &kp C_PLAY    AS(IT_N)  AS(IT_M)     AS(IT_COMMA) AS(IT_DOT)  AS(IT_FSLH) &kp RSHFT
-            &mo TOOLS &mo FN &kp LALT &kp LGUI  &kp RET                                                           &kp SPACE  &mo RAISE  &kp RALT &mo FN  &kp ESC
+            &mo TOOLS &mo FN &kp LALT &kp LGUI  &kp RET                                                           &kp SPACE  &mo SYMBOLS  &kp RALT &mo FN  &kp ESC
       >;
 
       sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp C_PREV C_NEXT>;
