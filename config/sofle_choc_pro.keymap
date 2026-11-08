@@ -27,7 +27,7 @@
             /* quick-tap-ms = <0>; */
             /* flavor = "tap-preferred"; */
 	    // Test this option to allow tap-hold to get "aaaa..."; Test also that simply holding I can get "AAAA..."
-            quick-tap-ms = <125>;
+            quick-tap-ms = <500>;
             flavor = "balanced";
             bindings = <&kp>, <&kp>;
         };
