@@ -24,11 +24,11 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             tapping-term-ms = <200>;
-            quick-tap-ms = <0>;
-            flavor = "tap-preferred";
+            /* quick-tap-ms = <0>; */
+            /* flavor = "tap-preferred"; */
 	    // Test this option to allow tap-hold to get "aaaa..."; Test also that simply holding I can get "AAAA..."
-            // quick-tap-ms = <125;
-            // flavor = "balanced";
+            quick-tap-ms = <125;
+            flavor = "balanced";
             bindings = <&kp>, <&kp>;
         };
         sh_lk: shift_lock {
