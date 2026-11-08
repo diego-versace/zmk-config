@@ -24,9 +24,6 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             tapping-term-ms = <200>;
-            /* quick-tap-ms = <0>; */
-            /* flavor = "tap-preferred"; */
-	    // Test this option to allow tap-hold to get "aaaa..."; Test also that simply holding I can get "AAAA..."
             quick-tap-ms = <500>;
             flavor = "balanced";
             bindings = <&kp>, <&kp>;
@@ -71,7 +68,6 @@
       sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp C_PREV C_NEXT>;
     };
 
-    // ADD SYMBOLS AND ARROWS, PAGE UP/DOWN, ...,  FROM QMK KEYBOARD
     symbols_layer {
       display-name = "symbols";
       // ------------------------------------------------------------------------------------------------------------
@@ -81,11 +77,11 @@
       // |       |  =  |  -  |  +   |  {   |  }   |        |  |       |  [   |  ]    |  ;    |  :   |   \   |       |
       //               |     |      |      |      |        |  |       |      |       |       |      |
       bindings = <
-        &trans     &kp F1     &kp F2     &kp F3    &kp F4    &kp F5                            &kp F6     &kp F7    &kp F8     &kp F9     &kp F10   &kp F11
-        &kp GRAVE  &kp N1     &kp N2     &kp N3    &kp N4    &kp N5                            &kp N6     &kp N7    &kp N8     &kp N9     &kp N0    &kp F12
-        &trans     &kp EXCL   &kp AT     &kp HASH  &kp DLLR  &kp PRCNT                         &kp CARET  &kp AMPS  &kp ASTRK  &kp LPAR   &kp RPAR  &kp PIPE
-        &trans     &kp EQUAL  &kp MINUS  &kp PLUS  &kp LBRC  &kp RBRC   &trans         &trans  &kp LBKT   &kp RBKT  &kp SEMI   &kp COLON  &kp BSLH  &trans
-                              &trans     &trans     &trans     &trans   &trans         &trans  &trans     &trans    &trans     &trans
+        &trans  &kp F1          &kp F2          &kp F3          &kp F4       &kp F5                                        &kp F6  &kp F7    &kp F8    &kp F9     &kp F10   &kp F11
+        &BSLH   &trans          &trans          &trans          &trans       &trans                                        &trans  &trans    &trans    &trans     &trans    &kp F12
+        &trans  AS(IT_A_GRAVE)  AS(IT_I_GRAVE)  AS(IT_E_GRAVE)  AS(IT_PLUS)  AS(IT_U_GRAVE)                                &trans  &trans    &kp UP    &trans     &kp HOME  &kp PG_UP
+        &trans  AS(IT_LT)       &trans          &trans          &trans       &trans          &trans                &trans  &trans  &kp LEFT  &kp DOWN  &kp RIGHT  &kp END   &kp PG_DN
+                                &trans          &trans          &trans       &trans          &trans                &trans  &trans  &trans    &trans    &trans
       >;
 
     };
