@@ -13,7 +13,7 @@
 
 #define QWERTY 0
 #define SYMBOLS 1
-#define FN 2
+#define FPS 2
 #define TOOLS 3
 #define AS(keycode) &as LS(keycode) keycode
 
@@ -66,11 +66,11 @@
       // | SHIFT |  Z  |  X  |  C   |  V   |  B   |  MUTE  |  | PLAY  |  N   |  M    |  ,    |  .   |   /   | SHIFT |
       //               | GUI | ALT  | CTRL | LOWER|  ENTER |  | SPACE | RAISE| CTRL  | ALT   | GUI  |
       bindings = <
-        &kp ESC    AS(IT_N1)  AS(IT_N2)   AS(IT_N3)  AS(IT_N4)  AS(IT_N5)                                   AS(IT_N6)    AS(IT_N7)  AS(IT_N8)     AS(IT_N9)   AS(IT_N0)       AS(IT_SQT)
-        &kp TAB    AS(IT_Q)   AS(IT_W)    AS(IT_E)   AS(IT_R)   AS(IT_T)                                    AS(IT_Y)     AS(IT_U)   AS(IT_I)      AS(IT_O)    AS(IT_P)        &kp BSPC
-        &sh_lk     AS(IT_A)   AS(IT_S)    AS(IT_D)   AS(IT_F)   AS(IT_G)                                    AS(IT_H)     AS(IT_J)   AS(IT_K)      AS(IT_L)    AS(IT_O_GRAVE)  AS(IT_A_GRAVE)
-        &kp LCTRL  AS(IT_Z)   AS(IT_X)    AS(IT_C)   AS(IT_V)   AS(IT_B)   &kp C_MUTE           &kp C_PLAY  AS(IT_N)     AS(IT_M)   AS(IT_COMMA)  AS(IT_DOT)  &as_2 IT_UNDER IT_MINUS    &kp ESC
-                              &tog TOOLS  &mo FN     &kp LALT   &kp LGUI   &kp SPACE            &kp RET     &mo SYMBOLS  &kp RALT   &mo FN        &tog TOOLS
+        &kp ESC    AS(IT_N1)  AS(IT_N2)   AS(IT_N3)  AS(IT_N4)  AS(IT_N5)                                   AS(IT_N6)    AS(IT_N7)  AS(IT_N8)     AS(IT_N9)   AS(IT_N0)                AS(IT_SQT)
+        &kp TAB    AS(IT_Q)   AS(IT_W)    AS(IT_E)   AS(IT_R)   AS(IT_T)                                    AS(IT_Y)     AS(IT_U)   AS(IT_I)      AS(IT_O)    AS(IT_P)                 &kp BSPC
+        &sh_lk     AS(IT_A)   AS(IT_S)    AS(IT_D)   AS(IT_F)   AS(IT_G)                                    AS(IT_H)     AS(IT_J)   AS(IT_K)      AS(IT_L)    AS(IT_O_GRAVE)           AS(IT_A_GRAVE)
+        &kp LCTRL  AS(IT_Z)   AS(IT_X)    AS(IT_C)   AS(IT_V)   AS(IT_B)   &kp C_MUTE           &kp C_PLAY  AS(IT_N)     AS(IT_M)   AS(IT_COMMA)  AS(IT_DOT)  &as_2 IT_UNDER IT_MINUS  &kp ESC
+                              &tog TOOLS  &tog FPS   &kp LALT   &kp LGUI   &kp SPACE            &kp RET     &mo SYMBOLS  &kp RALT   &tog FPS      &tog TOOLS
       >;
 
       sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp C_PREV C_NEXT>;
@@ -85,17 +85,17 @@
       // |       |  =  |  -  |  +   |  {   |  }   |        |  |       |  [   |  ]    |  ;    |  :   |   \   |       |
       //               |     |      |      |      |        |  |       |      |       |       |      |
       bindings = <
-        &trans    &kp F1          &kp F2          &kp F3          &kp F4       &kp F5                                        &kp F6  &kp F7    &kp F8    &kp F9     &kp F10   &kp F11
-        AS(IT_BSLH)  &trans          &trans          &trans          &trans       &trans                                        &trans  &trans    &trans    &trans     &trans    &kp F12
-        &trans    AS(IT_A_GRAVE)  AS(IT_I_GRAVE)  AS(IT_E_GRAVE)  AS(IT_PLUS)  AS(IT_U_GRAVE)                                &trans  &trans    &kp UP    &trans     &kp HOME  &kp PG_UP
-        &trans    AS(IT_LT)       &trans          &trans          &trans       &trans          &trans                &trans  &trans  &kp LEFT  &kp DOWN  &kp RIGHT  &kp END   &kp PG_DN
-                                  &trans          &trans          &trans       &trans          &kp RALT                &trans  &trans  &trans    &trans    &trans
+        &trans       &kp F1          &kp F2          &kp F3          &kp F4       &kp F5                                          &kp F6  &kp F7    &kp F8    &kp F9     &kp F10   &kp F11
+        AS(IT_BSLH)  &trans          &trans          &trans          &trans       &trans                                          &trans  &trans    &trans    &trans     &trans    &kp F12
+        &trans       AS(IT_A_GRAVE)  AS(IT_I_GRAVE)  AS(IT_E_GRAVE)  AS(IT_PLUS)  AS(IT_U_GRAVE)                                  &trans  &trans    &kp UP    &trans     &kp HOME  &kp PG_UP
+        &trans       AS(IT_LT)       &trans          &trans          &trans       &trans          &trans                  &trans  &trans  &kp LEFT  &kp DOWN  &kp RIGHT  &kp END   &kp PG_DN
+                                     &trans          &trans          &trans       &trans          &kp RALT                &trans  &trans  &trans    &trans    &trans
       >;
 
     };
 
     fn_layer {
-      display-name = "fn";
+      display-name = "fps";
       // ------------------------------------------------------------------------------------------------------------
       // | BTCLR | BT1  | BT2  |  BT3  |  BT4  |  BT5 |                |      |      |       |      |       |       |
       // |       | INS  | PSCR | GUI   |       |      |                | PGUP |      |   ^   |      |       |       |
@@ -103,11 +103,11 @@
       // |       | UNDO | CUT  | COPY  | PASTE |      |      |  |      |      |      |       |      |       |       |
       //                |      |       |       |      |      |  |      |      |      |       |      |
       bindings = <
-        &trans  &kp F1  &kp F2  &kp F3  &kp F4  &kp F5                        &kp F6  &kp F7  &kp F8  &kp F9  &kp F10  &kp F11
-        &trans  &trans  &trans  &trans  &trans  &trans                        &trans  &trans  &trans  &trans  &trans   &kp F12
-        &trans  &trans  &trans  &trans  &trans  &trans                        &trans  &trans  &trans  &trans  &trans   &trans
-        &trans  &trans  &trans  &trans  &trans  &trans  &trans        &trans  &trans  &trans  &trans  &trans  &trans   &trans
-                        &trans  &trans  &trans  &trans  &trans        &trans  &trans  &trans  &trans  &trans
+        &trans    &trans  &trans  &trans  &trans  &trans                        &trans  &trans    &trans    &trans     &trans   &trans
+        &kp CAPS  &trans  &trans  &trans  &trans  &trans                        &trans  &trans    &trans    &trans     &trans   &trans
+        &trans    &trans  &trans  &trans  &trans  &trans                        &trans  &trans    &kp UP    &trans     &trans   &kp PG_UP
+        &trans    &trans  &trans  &trans  &trans  &trans  &trans        &trans  &trans  &kp LEFT  &kp DOWN  &kp RIGHT  &trans   &kp PG_DN
+                          &trans  &trans  &trans  &trans  &trans        &trans  &trans  &trans    &trans    &trans
       >;
 
     };
@@ -121,11 +121,11 @@
       //                    |         |         |         |         |         | |      |      |      |       |      |
       display-name = "tools";
       bindings = <
-        &bt BT_CLR         &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2     &bt BT_SEL 3     &bt BT_SEL 4                                                     &none   &none   &none   &none  &none  &none
-        &ext_power EP_TOG  &none         &none         &rgb_ug RGB_SAD  &rgb_ug RGB_SAI  &none                                                            &none   &none   &none   &none  &none  &none
-        &none              &none         &none         &none            &none            &none                                                            &none   &none   &none   &none  &none  &none
-        &none              &none         &none         &none            &none            &studio_unlock    &rgb_ug RGB_TOG                &none   &none   &none   &none   &none   &none  &none
-                                         &trans        &trans           &trans           &trans            &trans                         &trans  &trans  &trans  &trans  &trans
+        &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2     &bt BT_SEL 3     &bt BT_SEL 4                                                     &none   &none   &none   &none  &none  &none
+        &none       &none         &none         &rgb_ug RGB_SAD  &rgb_ug RGB_SAI  &none                                                            &none   &none   &none   &none  &none  &none
+        &none       &none         &none         &none            &none            &none                                                            &none   &none   &none   &none  &none  &none
+        &none       &none         &none         &none            &none            &studio_unlock    &rgb_ug RGB_TOG                &none   &none   &none   &none   &none   &none  &none
+                        	  &trans        &trans           &trans           &trans            &trans                         &trans  &trans  &trans  &trans  &trans
       >;
 
       sensor-bindings = <&rgb_encoder_left &rgb_encoder_right>;
