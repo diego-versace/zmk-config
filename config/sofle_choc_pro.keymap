@@ -87,7 +87,7 @@
       //               |     |      |      |      |        |  |       |      |       |       |      |
       bindings = <
         &trans    &kp F1          &kp F2          &kp F3          &kp F4       &kp F5                                        &kp F6  &kp F7    &kp F8    &kp F9     &kp F10   &kp F11
-        &AS(IT_BSLH)  &trans          &trans          &trans          &trans       &trans                                        &trans  &trans    &trans    &trans     &trans    &kp F12
+        AS(IT_BSLH)  &trans          &trans          &trans          &trans       &trans                                        &trans  &trans    &trans    &trans     &trans    &kp F12
         &trans    AS(IT_A_GRAVE)  AS(IT_I_GRAVE)  AS(IT_E_GRAVE)  AS(IT_PLUS)  AS(IT_U_GRAVE)                                &trans  &trans    &kp UP    &trans     &kp HOME  &kp PG_UP
         &trans    AS(IT_LT)       &trans          &trans          &trans       &trans          &trans                &trans  &trans  &kp LEFT  &kp DOWN  &kp RIGHT  &kp END   &kp PG_DN
                                   &trans          &trans          &trans       &trans          &kp RALT                &trans  &trans  &trans    &trans    &trans
