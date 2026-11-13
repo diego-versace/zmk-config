@@ -16,7 +16,6 @@
 #define FN 2
 #define TOOLS 3
 #define AS(keycode) &as LS(keycode) keycode
-#define AS_2(holdKeycode, tapKeycode) &as_2 holdKeycode tapKeycode
 
 / {
 
