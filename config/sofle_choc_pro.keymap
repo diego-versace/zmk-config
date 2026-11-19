@@ -106,8 +106,8 @@
         &trans    &kp IT_N1  &kp IT_N2  &kp IT_N3 &kp IT_N4  &kp IT_N5                       &kp IT_N6  &kp IT_N7  &kp IT_N8  &kp IT_N9  &kp IT_N0  &trans
         &kp CAPS  &kp IT_Q   &kp IT_W   &kp IT_E  &kp IT_R   &kp IT_T                        &kp IT_Y   &kp IT_U   &kp IT_I   &kp IT_O   &kp IT_P   &trans
         &trans    &kp IT_A   &kp IT_S   &kp IT_D  &kp IT_F   &kp IT_G                        &kp IT_H   &kp IT_J   &kp UP     &trans     &trans     &trans
-        &trans    &trans     &trans     &trans    &trans     &trans    &trans        &trans  &trans     &kp LEFT   &kp DOWN   &kp RIGHT  &trans     &trans
-                             &trans     &trans    &trans     &trans    &trans        &trans  &trans     &trans     &trans     &trans
+        &trans    &kp IT_Z   &kp IT_X   &kp IT_C  &kp IT_V   &kp IT_B   &trans        &trans  &trans     &kp LEFT   &kp DOWN   &kp RIGHT  &trans     &trans
+                             &trans     &trans    &trans     &kp SPACE  &trans        &trans  &trans     &trans     &trans     &trans
       >;
 
     };
